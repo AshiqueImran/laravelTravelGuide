@@ -64,7 +64,13 @@ URL: http://roronoasazzed.com/
                         <p>{{$place[0]->details}}</p>
                         <h1 class="text-capitalize">hotel: <span style="color: #27ae60;">{{$place[0]->hotel}}</span></h1>
                         <h1 class="text-capitalize">capacity: <span style="color: #27ae60;">{{$place[0]->capacity}}</span></h1>
-                        <h1 class="text-capitalize">capacity: <span style="color: #27ae60;">{{$place[0]->count}}</span></h1>
+
+                        @foreach($counts as $count)
+                        	@if($count-> bookingplace == $place[0]->plcaeName)
+                        		<h1 class="text-capitalize">Count: <span style="color: #27ae60;">{{$count -> total}}</span></h1>
+
+                        	@endif
+                        @endforeach
 
                     </div>
                 </div>

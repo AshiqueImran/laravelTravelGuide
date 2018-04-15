@@ -1,0 +1,822 @@
+/*
+Author: Roronoa Sazzed
+Email: mysticyagami7@gmail.com
+URL: http://roronoasazzed.com/
+
+/* media query for responsiveness
+@media (max-width: 767px) {}
+@media (min-width: 768px) {}
+@media (min-width: 1200px) {}
+
+
+
+font-family: 'Ubuntu Condensed', sans-serif;
+font-family: 'Allerta Stencil', sans-serif;
+
+*/
+
+/* search by following keywords 
+
+1. landing page
+2. admin login panel
+3. admin homepage
+4. 1st branch of Admin
+5. registration page
+6. Regestration success + adding admin successfully
+7. user home starts
+8. places didn't visit page
+9. booking panel (user)
+10. user booked (admin panel)
+11. add new info of places
+12. edit info admin panel starts + places
+
+
+
+/* Landing page */
+
+
+/* selection color changing*/
+
+::-moz-selection { /* Code for Firefox */
+    color: whitesmoke;
+    background: #f1c40f;
+}
+
+::selection {
+    color: whitesmoke; 
+    background: #f1c40f;
+}
+
+
+label{
+    font-family: 'Allerta Stencil', sans-serif;
+    letter-spacing: 1px;
+}
+
+
+.mainDiv{
+    background-image: url(../images/landing_optional_2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.mainDiv p{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+.marginContent{
+    margin: 12% 0;
+}
+
+.content{
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 75px;
+    background-color: black;
+    opacity: .7;
+}
+
+.content h1{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: #f1c40f;
+    font-size: 50px;
+}
+
+.content p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    margin-top: -3%;
+}
+
+.content a {
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    text-shadow: 1px black;
+    border-radius: 30% 0 30% 0;
+}
+
+.content a:hover{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    border-radius: 0;
+    transition: 300ms;
+}
+
+
+.marginButton{
+    margin-top: 25px;
+}
+
+.btnLogin{
+    padding: 10px 50px;
+    background-color: #27ae60;
+}
+
+.btnLogin:hover{
+    background-color: #34975e ;
+}
+
+.btnRegistration{
+    padding: 10px 23px;
+    background-color: #3498db;
+}
+
+.btnRegistration:hover{
+    background-color: #2980b9;
+}
+
+.btnAdmin{
+    padding: 10px 20px;
+    background-color: #34495e;
+    position: absolute;
+    top: 3%;
+    right: -2%;
+}
+
+.btnAdmin:hover{
+    background-color: #2c3e50;
+}
+
+
+/* landing page ends */
+
+
+/* admin login panel starts */
+
+.adminLogin{
+    background-image: url(../images/admin_log_in.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.adminLogInHeader{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: #f1c40f;
+    font-size: 50px;
+}
+
+.contentAdminLogin{
+    margin-top: 12%;
+    color: white;
+}
+
+.background{
+    padding-bottom: 50px;
+    background-color: black;
+    opacity: .7;
+    position: relative;
+}
+
+.btnAdminLogIn{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    border-radius: 30% 0 30% 0;
+    padding: 10px 30px;
+    background-color: #f1c40f;
+    position: absolute;
+    bottom: -5%;
+    left: 40%;
+}
+
+
+.btnAdminLogIn:hover{
+    transition: 300ms;
+    border-radius: 0;
+    color: white;
+}
+
+/* admin login panel ends */
+
+/* admin homepage */
+
+.adminProfileDiv{
+    background-image: url(../images/admin_logged_in.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.marginContentAdmin{
+    margin-top: 8%;
+}
+
+.bgOfAdmin{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 20px;
+    background-color: black;
+    opacity: .8;
+    color: #f1c40f;
+    padding-bottom: 25px;
+}
+
+.bgOfAdmin ul li a{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    background-color: #30336b;
+    margin: 2% 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 0 black, 4px 4px 0 #30336b;
+}
+
+
+.bgOfAdmin ul li a:hover{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    background-color: #30336b;
+    margin: 2% 0;
+    transition: 400ms;
+    box-shadow: 3px 3px  black, 0px 0px 20px #f1c40f;
+}
+
+.btnNewAdmin{
+    padding: 10px 30px;
+    ;
+}
+
+.btnShowBooking{
+    padding: 10px 34px;
+}
+
+
+.btnAddNewInfo{
+    padding: 10px 38px;
+}
+
+.btnDeleteInfo{
+    padding: 10px 44px;
+}
+
+.btnChangePassword{
+    padding: 10px 22px;
+}
+
+.btnLogout{
+    padding: 10px 60px;
+}
+
+/* Admin homepage interface ends */
+
+
+
+
+/* branches of Admin starts */
+
+/* 1st branch add new admin */
+
+.addNewAdminDiv{
+    background-image: url(../images/hiring_admin.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+/* add new admin page ends */
+
+/* registration page starts */
+
+.registrationDiv{
+    background-image: url(../images/register_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+
+.contentRegistration{
+    margin-top: 8%;
+    color: white;
+}
+
+/* regestration page ends */
+
+
+/* Regestration success + adding admin successfully */
+
+.successDiv{
+    background-image: url(../images/success.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+}
+
+.marginContentSuccess{
+    margin-top: 5%;
+}
+
+.backgroundSuccessContent{
+    background-color: #130f40;
+    opacity: .8;
+    padding: 50px 0px;
+}
+
+.headerSuccess{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 45px;
+    color: #f1c40f;
+}
+
+.btnRidirect{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    border-radius: 30% 0 30% 0;
+    padding: 10px 30px;
+    background-color: #f1c40f;
+    position: absolute;
+    bottom: -5%;
+    left: 45%;
+    transition: 500ms;
+    color: black;
+}
+
+.btnRidirect:hover{
+    border-radius: 0;
+    background-color: #f39c12;
+    color: white;
+}
+
+/* success page ends */
+
+
+/* user home starts */
+
+
+.userHome{
+    height: 100vh;
+    background-image: url(../images/landing_optional_3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contentUserHome{
+    margin-top: 5%;
+}
+
+.marginUserHeader{
+    margin-top: 5%;
+    background-color: black;
+    opacity: .8;
+    padding: 25px 0;
+}
+
+
+.userHeader{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 40px;
+    color: #f1c40f;
+}
+
+.userHome ul li a{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    border-radius: 30px 0px 30px 0px;
+    background-color: #27ae60;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 4px lightgreen, 4px 4px 10px #27ae60;
+    transition: 350ms;
+    opacity: .9;
+}
+
+.userHome ul li a:hover{
+    border-radius: 0px 30px 0px 30px;
+    color: black;
+    box-shadow: 2px 2px 4px lightgreen, 2px 2px 20px #f1c40f;
+}
+
+.userHome label{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+.btnSearch{
+    margin-top: 1%;
+    background-color: #f1c40f;
+    border-radius: 30% 0% 30% 0%;
+    padding: 10px 25px;
+    transition: 500ms;
+    color: black;
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+.btnSearch:hover{
+    border-radius: 0%;
+    background-color: #f39c12;
+}
+
+/* user home ends */
+
+
+/* places didn't visit page */
+
+.headerVisit{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: #f1c40f;
+    font-size: 50px;
+}
+
+.placesNotVisitingDiv{
+    min-height: 0px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background-color: whitesmoke;
+}
+
+.specialClass img{
+    padding: 5%;
+    margin: auto;
+    box-shadow: 0px 4px 10px grey;
+    margin: 5% 0%;
+}
+
+
+.specialClass a p {
+    margin-top: 47%;
+    height: 25%;
+    width: 50%;
+    background-color: black;
+    opacity: .85;
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 23px;
+    padding: 5% 0%;
+    color: #f1c40f;
+    border-radius: 0 50px;
+    transition: all 500ms;
+    box-shadow: 2px 2px 1px grey, 4px 4px 4px black;
+}
+.specialClass a:focus,
+.specialClass a:hover,
+.specialClass a p:focus,
+.specialClass a p:hover{
+    color: black;
+    text-decoration: none;
+    transform: scale(.8);
+    background-color: #f1c40f;
+}
+
+/* places didn't visit ends */
+
+
+/* booking panel starts */
+
+.bookedPlaceDiv{
+    background-image: url(../images/booked_place_3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-bottom: 200px;
+    background-attachment: fixed;
+}
+
+.marginContentBooked{
+    margin-top: 50px;
+}
+
+.bookingHeader{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 45px;
+    color: #f1c40f;
+}
+
+.ultraFlex {
+    display: flex;
+    opacity: .8;
+    background-color: white;
+}
+
+.ultraFlex, p{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
+.f1, .f2, .f3, .f4, .f5 {
+    padding: 10px;
+    border-bottom: 1px solid #f1c40f;
+    display: inline-block;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.f1{
+    flex-order: 1;
+}
+
+.f2{
+    flex-order: 2;
+}
+
+.f3{
+    flex-order: 3;
+}
+
+.f4{
+    flex-order: 4;
+}
+
+.f5{
+    flex-order: 5;
+}
+
+/* booking panel ends */
+
+/* user booked admin panel starts */
+
+.userInfoForAdminDiv{
+    background-image: url(../images/booked_place_3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-bottom: 200px;
+    background-attachment: fixed;
+}
+
+
+.userInfo{
+    text-align: left !important;
+    padding: 3% 0%;
+}
+
+.userInfo h1{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 30px;
+    color: #f1c40f;
+}
+
+.userInfo p{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+
+.flexBoxAdmin{
+    display: flex;
+    background-color: white;
+    opacity: .7;
+}
+
+.flexBoxAdmin h3{
+    padding-bottom: 3%;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 25px;
+    color: #27ae60;
+    border-bottom: 1px solid #f1c40f;
+    pointer-events: none;
+}
+
+.flexBoxAdmin p{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
+.flexBoxAdmin a{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: white;
+    background-color: #27ae60;
+    border-radius: 20px 0px;
+    transition: 150ms;
+}
+
+.flexBoxAdmin a:focus,
+.flexBoxAdmin a:hover{
+    color: #f1c40f;
+}
+
+.flexBoxAdmin a:hover{
+    border-radius: 10px 0px;
+    box-shadow: 2px 2px 5px black;
+}
+
+
+.flexContent1{
+    flex-order: 1;
+    width: 20%;
+    padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+.flexContent2{
+    flex-order: 1;
+    width: 20%;
+    padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+.flexContent3{
+    flex-order: 1;
+    width: 20%;
+    padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+.flexContent4{
+    flex-order: 1;
+    width: 20%;
+    padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+.flexContent5{
+    flex-order: 1;
+    width: 20%;
+    padding: 25px 5px;
+    box-sizing: border-box;
+}
+
+/* user booked admin panel ends */
+
+/* add new info of places starts */
+
+.addNewInfoDiv{
+    background-image: url(../images/adding_new_info_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.contentAddInfo{
+    margin-top: 5%;
+    color: white;
+}
+
+.category label {
+    color: white;
+    padding: 3%;
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+.category .options {
+    color: white;
+    background-color: transparent;
+}
+
+.category .options select option {
+    color: white;
+    background-color: transparent;
+}
+
+.backgroundInfo{
+    padding-bottom: 50px;
+    background-color: black;
+    opacity: .7;
+    position: relative;
+}
+
+.btnAddInfo{
+    background-color: #f1c40f;
+    padding: 10px 30px;
+    position: absolute;
+    bottom: -3%;
+    left: 45%;
+    border-radius: 20px 0px;
+    transition: 200ms;
+    color: black;
+}
+
+.btnAddInfo:hover{
+    background-color: #f1c40f;
+    border-radius: 10px 0px;
+    box-shadow: 2px 2px 20px #f39c12;
+    color: white;
+}
+
+
+/* add info admin panel ends */
+
+/* edit info admin panel starts + places page starts*/
+
+.editInfoDiv{
+    background-image: url(../images/edit_info_3.jpg);
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 150px;
+}
+
+.editInfoDiv h1{
+    color: #f1c40f;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.editInfoDiv p{
+    color: white;
+}
+
+.marginContentEditDiv{
+    margin-top: 3%;
+}
+
+.marginContentEditDiv .weatherDiv,
+.marginContentEditDiv .gMap{
+    margin-top: 2%;
+}
+
+
+
+.placesInfo{
+    background-color: black;
+    opacity: .8;
+    color: white;
+    margin: auto;
+    padding: 3%;
+}
+
+.placesInfo p {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 18px;
+}
+
+.placesInfo a{
+    opacity: .8;
+    margin-top: 1%;
+    background-color: #f1c40f;
+    padding: 10px 25px;
+    border-radius: 20px 0px;
+    font-family: 'Allerta Stencil', sans-serif;
+    color: black;
+    transition: 150ms;
+}
+
+.placesInfo a:hover{
+    color: white;
+    border-radius: 10px 0px;
+    box-shadow: 2px 2px 4px #f39c12;
+}
+
+.headerWeather{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 35px;
+    color: #f1c40f;
+
+}
+
+.flexBoxEdit{
+    display: flex;
+    justify-content: space-between;
+}
+
+.weatherDiv{
+    padding: 3%;
+    background-color: black;
+    opacity: .8;
+    color: white;
+    flex-order: 1;
+    width: 49%;
+    box-sizing: border-box;
+}
+
+.gMap{
+    padding: 3%;
+    background-color: black;
+    opacity: .8;
+    color: white;
+    flex-order: 2;
+    width: 49%;
+    box-sizing: border-box;
+}
+
+
+.gMap iframe {
+    width: 100%;
+}
+
+.btnBookNow{
+    background-color: #f1c40f;
+    padding: 10px 25px;
+    border-radius: 20px 0px;
+    color: black;
+    opacity: .7;
+    transition: 150ms;
+    font-family:  'Allerta Stencil', sans-serif;
+    margin-top: 2%;
+}
+
+.btnBookNow:hover{
+    color: white;
+    border-radius: 10px 0px;
+}
+
+.category .options{color: #a29bfe !important;}
+
+
+/* edit info admin panel starts + places page ends */

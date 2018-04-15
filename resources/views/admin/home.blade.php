@@ -71,7 +71,7 @@ URL: http://roronoasazzed.com/
                             <a class="btn btnAddNewInfo" href="/admin/addinfo">add new info</a>
                         </li>
                         <li>
-                            <a class="btn btnDeleteInfo" href="#">edit Place info</a>
+                            <a class="btn btnDeleteInfo" href="/admin/editInfo">edit Place info</a>
                         </li>
                         <li>
                             <a class="btn btnChangePassword" href="/admin/pass">change password</a>

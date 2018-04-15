@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -142,10 +143,22 @@ class AdminController extends Controller
              ->limit($limit)
             ->get();
 
+            $info=DB::table('placetable')
+             ->select('plcaeName','capacity')
+            ->get(); 
+
+            $today= DATE("Y-m-d");
+
+            $sql="SELECT `bookingplace`, sum(`count`) as `total` FROM `bookingtable`  WHERE `checkout`>= '$today' and `time` <= '$today' and `status`='confirmed' group by `bookingplace`";
+
+            $count = DB::select($sql);
+
             $limit = $limit+10; //every time increments by 10 rows
 
             return view('admin/showBooking')
             ->with('bookinfInfo',$res)
+            ->with('nameCapacity',$info)
+            ->with('counts', $count)
             ->with('limit',$limit);
     }
 
@@ -171,4 +184,69 @@ class AdminController extends Controller
         return redirect('/admin/showBookings/20');
     }
 
+    public function editInfo()
+    {
+        $res= DB::table('placetable')
+        ->select('plcaeName','capacity','details','hotel','id','category')
+            ->get();
+
+        return view('admin/editInfo')
+                ->with('places',$res);
+    }
+
+    public function showEditInfo($id)
+    {
+        $res=DB::table('placetable')
+             ->where('id', $id)
+            ->get();
+            //dd($res);
+        return view('admin/editPage')
+                ->with('res',$res);
+    }
+
+    public function editInfoSubmit(Request $request,$id)
+    {
+            $this->validate($request, [
+                'plcaeName' => 'required|max:100',
+                'map' => 'required',
+                'details' => 'required|max:220',
+                'hotel' => 'required|max:150',
+                'capacity' => 'required|numeric',
+                'category'=>'required',
+            ]);
+
+            $params =[
+                'plcaeName' => $request->plcaeName,
+                'details' => $request->details,
+                'hotel' => $request->hotel,
+                'category' => $request->category,
+                'capacity' => $request->capacity,
+                'map' => $request->map,
+                'lastEdit' => $request->session()->get('adminEmail'),
+            ];
+
+            DB::table('placetable')
+            ->where('id',$id)
+            ->update($params);
+
+            return view ('admin/successful');
+    }
+    public function delInfo($id) //not done yet
+    {
+        // $imgPath= DB::table('placetable') //to get path of image
+        //     ->select('image') 
+        //     ->where('id',$id)
+        //     ->get();
+
+        // if(File::exists($imgPath[0]->image)) { // to check if image exists
+        //     dd($imgPath[0]->image);
+        //     File::delete($image_path);
+        //     }
+
+         DB::table('placetable')
+             ->where('id', $id)
+            ->delete();
+
+        return redirect('/admin/editInfo');
+    }
 }

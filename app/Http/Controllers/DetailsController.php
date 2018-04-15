@@ -14,6 +14,12 @@ class DetailsController extends Controller
             ->get();
 
             //dd($res[0]->plcaeName);
+            $today= DATE("Y-m-d");
+
+            $sql="SELECT `bookingplace`, sum(`count`) as `total` FROM `bookingtable`  WHERE `checkout`>= '$today' and `time` <= '$today' group by `bookingplace`";
+
+            $count = DB::select($sql);
+            //dd($count);
 
             $url="https://api.wunderground.com/api/405b549fa3d35efb/conditions/q/BD/".strtolower($res[0]->plcaeName).".json";
 			$json=file_get_contents($url);
@@ -23,7 +29,8 @@ class DetailsController extends Controller
 
 	          return view('user/details')
 	          ->with('place',$res)
-	          ->with('weatherArray',$weatherArray);
+	          ->with('weatherArray',$weatherArray)
+              ->with('counts',$count);
 	    	//echo $request->place;
     }
     public function showDetails($place)
@@ -33,6 +40,12 @@ class DetailsController extends Controller
             ->get();
 
             //dd($res[0]->plcaeName);
+            $today= DATE("Y-m-d");
+
+            $sql="SELECT `bookingplace`, sum(`count`) as `total` FROM `bookingtable`  WHERE `checkout`>= '$today' and `time` <= '$today' group by `bookingplace`";
+
+            $count = DB::select($sql);
+            //dd($count);
 
             $url="https://api.wunderground.com/api/405b549fa3d35efb/conditions/q/BD/".strtolower($res[0]->plcaeName).".json";
             $json=file_get_contents($url);
@@ -42,7 +55,8 @@ class DetailsController extends Controller
 
               return view('user/details')
               ->with('place',$res)
-              ->with('weatherArray',$weatherArray);
+              ->with('weatherArray',$weatherArray)
+              ->with('counts',$count);
             //echo $request->place;
     }
     public function goBackToHome()

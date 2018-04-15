@@ -65,6 +65,21 @@ URL: http://roronoasazzed.com/
                         <p><b>Name: </b>{{$info->bookedby}}</p>
                         <p><b>Time: </b>{{$info -> time}} </p>
                         <p><b>Hotel: </b>{{$info -> hotel}} </p>
+                        <p style="color: #575fcf;"><b>applied seats: </b>{{$info -> count}} </p>
+
+
+                        @foreach($counts as $count)
+                            @if($count->bookingplace == $info->bookingplace)
+                                <p style="color: #ff9ff3;"><b>Total confirmed seats: </b>{{$count->total}} </p>
+                            @endif
+                        @endforeach
+
+                        @foreach($nameCapacity as $capacity)
+                            @if($capacity->plcaeName == $info->bookingplace)
+                                <p style="color: #0fbcf9;"><b>capacity seats: </b>{{$capacity->capacity}} </p>
+                            @endif
+                        @endforeach
+
                     </div>
                     <div class="flexBoxAdmin">
                         <div class="flexContent1">

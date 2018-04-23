@@ -7,7 +7,7 @@ URL: http://roronoasazzed.com/
 -->
 <html>
     <head>
-        <title>Places You Did Not Visit</title>
+        <title>Top 5 Info</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,8 +42,6 @@ URL: http://roronoasazzed.com/
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        
-        
         <!-- font integration -->
         <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Old+Standard+TT|Ubuntu+Condensed|Vollkorn|Oswald" rel="stylesheet">
 
@@ -55,29 +53,33 @@ URL: http://roronoasazzed.com/
     <body>
         <!-- body part start -->
 
-        <div class="container-fluid placesNotVisitingDiv">
-            <div class="row">
-                
-                <h1 class="text-capitalize text-center headerVisit">select your next destination</h1>
-                
-                <div class="container specialClass">
-
-                    @foreach($allPlaces as $place)
-                        @if(!in_array( $place->plcaeName,$visitedPlaces))
-                        <div class="col-md-4 col-sm-4 col-xs-10">
-                            <a href="/details/{{$place->plcaeName}}"><p class="text-uppercase text-center">
-                            {{$place->plcaeName}}</p></a>
-                            <img class="img-responsive" src="{{$place->image}}" alt=""/>
-                        </div>
-                        @endif
-                    @endforeach
+        <div class="container-fluid adminLogin">
+            <div class="container contentAdminLogin">
+                <div class="col-md-3 col-sm-3"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12 background">
+                    <h1 class="text-capitalize adminLogInHeader text-center">Top 5 Members</h1>
                     
+                    <ol class="text-center" style="list-style-position: inside;">
+                        <h4>Email -> count</h4>
+                        @foreach($topMembers as $topMember)
+                        <li>{{$topMember -> bookedby}} -> {{$topMember-> popular}}</li>
+                        @endforeach
+                    </ol>
 
+                    <h1 class="text-capitalize adminLogInHeader text-center">Top 5 Places</h1>
+                    <div class="text-center" style="list-style-position: inside;">
+                    <ol >
+                        <h4>Place -> count</h4>
+                        @foreach($topPlaces as $topPlace)
+                        <li>{{$topPlace -> bookingplace}} -> {{$topPlace-> popular}}</li>
+                        @endforeach
+                    </ol>
                 </div>
+                </div>
+                <div class="col-md-3 col-sm-3"></div>
+            </div>
+        </div>
 
 
- <!-- body part end -->
-
-
-  </body>
+    </body>
 </html>

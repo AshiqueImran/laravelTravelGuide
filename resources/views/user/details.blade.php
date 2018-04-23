@@ -95,7 +95,7 @@ URL: http://roronoasazzed.com/
                         </div>
                     </div>
                      <div class="text-center center-block">
-                        <a href="#" class="btn btnBookNow text-capitalize">book now</a>
+                        <a href="/bookNow/{{$place[0]->plcaeName}}" class="btn btnBookNow text-capitalize">book now</a>
                     </div>
                 </div>
             </div>
@@ -104,3 +104,11 @@ URL: http://roronoasazzed.com/
 
     </body>
 </html>
+	<?php
+		include 'tts/TextToVoice.php';
+		echo '<link rel="stylesheet" type="text/css" href="css/style.css">';
+		//$text="Hello "."user";
+		$text= $place[0]->details;
+
+		echo '<audio src="' . getVoice($text) . '" autoplay="true"></audio>';
+	?>

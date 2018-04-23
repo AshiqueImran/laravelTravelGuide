@@ -77,6 +77,9 @@ URL: http://roronoasazzed.com/
                             <a class="btn btnChangePassword" href="/admin/pass">change password</a>
                         </li>
                         <li>
+                            <a class="btn btnChangePassword" href="/admin/top5"> Top 5 </a>
+                        </li>
+                        <li>
                             <a class="btn btnLogout" href="/logout">logout</a>
                         </li>
                     </ul>

@@ -12,10 +12,24 @@ class AdminController extends Controller
     {
     	return view('admin/login');
     }
+
+    public function top5()
+    {
+
+        $sql="SELECT `bookingplace` , COUNT(bookingplace) as popular from bookingtable GROUP by `bookingplace` order by popular DESC limit 5";
+        $topPlaces = DB::select($sql);
+
+        $query="SELECT `bookedby` , COUNT(bookedby) as popular from bookingtable GROUP by `bookedby` order by popular DESC limit 5";
+        $topMembers= DB::select($query);
+
+        return view('admin/top5')
+                ->with('topPlaces',$topPlaces)
+                ->with('topMembers',$topMembers);
+    }
     public function verifyAdmin(Request $request)
     {
             $this->validate($request, [
-                'email' => 'required|email',
+                'email' => 'required|email|exists:admin,email',
                 'adminPass' => 'required',
             ]);
 

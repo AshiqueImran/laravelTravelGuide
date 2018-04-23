@@ -21,6 +21,8 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::get('/changePass','DetailsController@showPassPage');
 	Route::post('/changePass','DetailsController@changePass');
 	Route::get('/myBookings','DetailsController@myBookings');
+	Route::get('/bookNow/{place}','UserController@bookNowPage');
+	Route::post('/bookNow/{place}','UserController@bookNow');
 });
 
 //admin
@@ -38,6 +40,7 @@ Route::group(['middleware' => ['adminSess']], function(){
 	Route::get('/admin/editInfo','AdminController@editInfo');
 	Route::get('/admin/editInfo/del/{id}','AdminController@delInfo');
 	Route::get('/admin/edit/{id}','AdminController@showEditInfo');
+	Route::get('/admin/top5','AdminController@top5');
 	Route::post('/admin/edit/{id}','AdminController@editInfoSubmit');
 });
 

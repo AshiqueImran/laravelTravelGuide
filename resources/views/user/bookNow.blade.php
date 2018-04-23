@@ -7,7 +7,7 @@ URL: http://roronoasazzed.com/
 -->
 <html>
     <head>
-        <title>Places You booked</title>
+        <title>Book Now</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -53,63 +53,54 @@ URL: http://roronoasazzed.com/
     <body>
         <!-- body part start -->
 
-        <div class="container-fluid bookedPlaceDiv">
-            <div class="row marginContentBooked">
-                <div class="container text-capitalize text-center">
-                    <h1 class="bookingHeader">booking panel</h1>
-
-
-                    <div class="ultraFlex"  style="color: #16a085; font-family: 'Ubuntu Condensed', sans-serif;">
-                        <div class="f1">
-                            <h2><i class="fa fa-road" style="margin-right: 2%;"></i><strong>place</strong></h2>
-                        </div>
-
-                        <div class="f2">
-                            <h2><i class="fa fa-building-o" style="margin-right: 2%;"></i><strong>hotel</strong></h2>
-                        </div>
-
-                        <div class="f3">
-                            <h2><i class="fa fa-calendar-check-o" style="margin-right: 2%;"></i><strong>date</strong></h2>
-                        </div>
-
-                        <div class="f4">
-                            <h2><i class="fa fa-dollar" style="margin-right: 2%;"></i><strong>bill</strong></h2>
-                        </div>
-
-                        <div class="f5">
-                            <h2><i class="fa fa-list-ul" style="margin-right: 2%;"></i><strong>status</strong></h2>
-                        </div>
-                    </div> 
-                    @if(isset($bookedInfo))
-                    @foreach($bookedInfo as $place)
-                    <div class="ultraFlex">
-                        <div class="f1">
-                            <p>{{$place->bookingplace}}</p>
-                        </div>
-                        <div class="f2">
-                            <p>{{$place->hotel}}</p>
-                        </div>
-                        <div class="f3">
-                            <p>{{$place->time}}</p>
-                        </div>
-                        <div class="f4">
-                            <p>{{$place->price}}</p>
-                        </div>
-                        <div class="f5">
-                            <p>{{$place->status}}</p>
-                        </div>
+        <div class="container-fluid bookNow">
+            <div class="container contentAdminLogin">
+                @if ($errors->any())
+                    <div class="alert alert-danger text-center">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <ul>{{ $error }}</ul>
+                            @endforeach
+                        </ul>
                     </div>
-                    @endforeach
-                    @endif
+                @endif 
+                <div class="col-md-3 col-sm-3"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12 background">
+                    <h1 class="text-capitalize adminLogInHeader text-center">book now</h1>
+                    <form method="post">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <input type="hidden" name="placeName" value="{{$placeName}}">
+                        <label class="text-capitalize">TrxID</label><br>
+                        <input type="text" name="trxId" class="form-control" style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white;">
                     </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label class="text-capitalize">mobile</label><br>
+                        <input type="number" name="mobile" class="form-control" style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white;">
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label class="text-capitalize">Checkin Date</label><br>
+                        <input type="date" name="checkIn" class="form-control" style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white;">
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label class="text-capitalize">Checkout Date</label><br>
+                        <input type="date" name="checkOut" class="form-control" style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white;">
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label class="text-capitalize">Total guest (Per persion 500Tk/day)</label><br>
+                        <input type="number" name="seat" class="form-control" style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white;">
+                    </div>
+
+                    <input type="submit" class="btn btnAdminLogIn text-capitalize" >
                     
+                </form>
                 </div>
+                <div class="col-md-3 col-sm-3"></div>
             </div>
         </div>
-
-
-
-
 
 
 

@@ -63,14 +63,15 @@ URL: http://roronoasazzed.com/
                     <div class="userInfo">
                         <h1><strong>info</strong></h1>
                         <p><b>Name: </b>{{$info->bookedby}}</p>
-                        <p><b>Time: </b>{{$info -> time}} </p>
+                        <p><b>Check in: </b>{{$info -> time}} </p>
                         <p><b>Hotel: </b>{{$info -> hotel}} </p>
+                        <p><b>Check Out: </b>{{$info -> checkout}} </p>
                         <p style="color: #575fcf;"><b>applied seats: </b>{{$info -> count}} </p>
 
 
                         @foreach($counts as $count)
                             @if($count->bookingplace == $info->bookingplace)
-                                <p style="color: #ff9ff3;"><b>Total confirmed seats: </b>{{$count->total}} </p>
+                                <p style="color: #EA2027;"><b>Total confirmed seats: </b>{{$count->total}} </p>
                             @endif
                         @endforeach
 

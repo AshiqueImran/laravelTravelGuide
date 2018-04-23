@@ -162,14 +162,14 @@ label{
 }
 
 .contentAdminLogin{
-    margin-top: 12%;
+    margin-top: 3%;
     color: white;
 }
 
 .background{
     padding-bottom: 50px;
     background-color: black;
-    opacity: .7;
+    opacity: .8;
     position: relative;
 }
 
@@ -204,7 +204,7 @@ label{
 }
 
 .marginContentAdmin{
-    margin-top: 8%;
+    margin-top: 2%;
 }
 
 .bgOfAdmin{
@@ -818,5 +818,13 @@ label{
 
 .category .options{color: #a29bfe !important;}
 
+/*book now*/
+.bookNow{
+    height: 100vh;
+    background-image: url(../images/book-now.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /* edit info admin panel starts + places page ends */

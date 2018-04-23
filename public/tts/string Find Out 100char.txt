@@ -1,0 +1,9 @@
+<?php //php 7.0.8
+
+$str="Hello there! you can choose search option or the auto suggest which can be customized anytime,hi how are you.";
+$what_you_want = substr($str, 0, strpos($str, '.'));
+echo $what_you_want."\n";
+echo strlen($str)."\n";
+echo strlen($what_you_want)."\n";
+    
+?>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ConfirmationMail;
 
 class AdminController extends Controller
 {
@@ -194,6 +196,14 @@ class AdminController extends Controller
         DB::table('bookingtable')
         ->where('id', $id)
         ->update($params);
+
+       $res= DB::table('bookingtable')
+            ->select('bookingplace','bookedby')
+            ->where('id', $id)
+            ->get();
+
+        Mail::to($res[0]->bookedby)
+                ->send(new ConfirmationMail($res[0]->bookingplace));
 
         return redirect('/admin/showBookings/20');
     }

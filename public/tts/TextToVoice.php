@@ -7,7 +7,7 @@
 
 			$tts = new VoiceRSS;
 			$voice = $tts->speech([
-			    'key' => '',//'<API key>'
+			    'key' => 'a668fcd80c3a498fb8eac9ddeea22b2c',//'<API key>'
 			    'hl' => 'en-us',
 			    'src' => $text,
 			    'r' => '0',

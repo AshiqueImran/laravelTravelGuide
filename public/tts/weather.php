@@ -1,7 +1,7 @@
 <?php 
 function weatherData($city)
 {
-	$url="https://api.wunderground.com/api/API/conditions/q/BD/".strtolower($city).".json";
+	$url="https://api.wunderground.com/api/405b549fa3d35efb/conditions/q/BD/".strtolower($city).".json";
 	$json=file_get_contents($url);
 	$weatherArray=json_decode($json,true);
 	//print_r( $weatherArray);

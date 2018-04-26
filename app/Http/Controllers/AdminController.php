@@ -134,7 +134,15 @@ class AdminController extends Controller
                 'hotel' => 'required|max:150',
                 'capacity' => 'required|numeric',
                 'category'=>'required',
+                'image' => 'required|mimes:jpeg,bmp,jpg,png',
             ]);
+
+            $file = $request->file('image');
+            //$file->move('images', $file->getClientOriginalName()); //to get original name
+            $name = $request->plcaeName.".png";//ex: placeName.png
+            $file->move('images', $name); //to get place name as photo name
+
+            $imgPath="/images/".$name; //ex: /images/placeName.png
 
             $params =[
                 'plcaeName' => $request->plcaeName,
@@ -144,6 +152,7 @@ class AdminController extends Controller
                 'capacity' => $request->capacity,
                 'map' => $request->map,
                 'lastEdit' => $request->session()->get('adminEmail'),
+                'image' => $imgPath,
             ];
 
             DB::table('placetable')
@@ -257,15 +266,15 @@ class AdminController extends Controller
     }
     public function delInfo($id) //not done yet
     {
-        // $imgPath= DB::table('placetable') //to get path of image
-        //     ->select('image') 
-        //     ->where('id',$id)
-        //     ->get();
+        $imgPath= DB::table('placetable') //to get path of image
+            ->select('image') 
+            ->where('id',$id)
+            ->get();
+        $image_path = public_path().'/'.$imgPath[0]->image;
 
-        // if(File::exists($imgPath[0]->image)) { // to check if image exists
-        //     dd($imgPath[0]->image);
-        //     File::delete($image_path);
-        //     }
+        if(file_exists($image_path)) { // to check if image exists
+            unlink($image_path);
+            }
 
          DB::table('placetable')
              ->where('id', $id)

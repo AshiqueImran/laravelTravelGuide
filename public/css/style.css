@@ -649,11 +649,10 @@ label{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 .contentAddInfo{
-    margin-top: 5%;
     color: white;
 }
 

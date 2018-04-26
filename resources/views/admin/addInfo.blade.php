@@ -67,7 +67,7 @@ URL: http://roronoasazzed.com/
                 <div class="col-md-3 col-sm-3"></div>
                 <div class="col-md-6 col-sm-6 col-xs-12 backgroundInfo">
                     <h1 class="text-capitalize adminLogInHeader text-center">add new info</h1>
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                         <label class="text-capitalize">place name</label><br>
                         <input type="text" name="plcaeName" class="form-control" maxlength="90" required style="height: 40px; border-radius: 0px; background-color: transparent; border: 1px solid white; color:white;">
@@ -102,6 +102,12 @@ URL: http://roronoasazzed.com/
                             <option value="historic ">Historical places</option>
                         </select>
                     </div>
+
+                    <div class="category">
+                        <label for="image">Picture</label>
+                        <input type="file" name="image" id="file">
+                    </div>
+
                     <div class="col-md-3 col-sm-3"></div>
                     <input class="btn btnAddInfo text-capitalize" type="submit" value="Add">
                     <!-- <a class="btn btnAddInfo text-capitalize" href="#">add</a> -->
